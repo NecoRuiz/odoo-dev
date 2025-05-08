@@ -10,7 +10,7 @@
     'auto_install': False,
     'data': [
         'security/ir.model.access.csv',
-        'views/solicitud_reunion_views.xml',
+        'views/solicitud_reunion_views.xml'
 ],
 
 }
