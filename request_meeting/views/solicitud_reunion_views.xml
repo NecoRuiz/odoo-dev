@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_form_solicitud_reunion" model="ir.ui.view">
+        <field name="name">solicitud.reunion.form</field>
+        <field name="model">solicitud.reunion</field>
+        <field name="arch" type="xml">
+            <form string="Solicitud de Reunión">
+    <header>
+    <button name="action_aceptar" string="Aceptar" type="object"
+            class="btn-primary" visible='eval:record.estado == "pendiente"'/>
+    <button name="action_rechazar" string="Rechazar" type="object"
+            class="btn-secondary" visible='eval:record.estado == "pendiente"'/>
+</header>
+
+
+    <sheet>
+        <group>
+            <field name="fecha"/>
+            <field name="hora"/>
+            <field name="motivo"/>
+            <field name="estado"/>
+            <field name="usuario_id"/>
+        </group>
+    </sheet>
+</form>
+
+        </field>
+    </record>
+
+    <record id="view_tree_solicitud_reunion" model="ir.ui.view">
+        <field name="name">solicitud.reunion.tree</field>
+        <field name="model">solicitud.reunion</field>
+        <field name="arch" type="xml">
+            <tree string="Solicitudes de Reunión">
+                <field name="fecha"/>
+                <field name="hora"/>
+                <field name="motivo"/>
+                <field name="estado"/>
+                <field name="usuario_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_solicitud_reunion" model="ir.actions.act_window">
+        <field name="name">Solicitudes de Reunión</field>
+        <field name="res_model">solicitud.reunion</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_solicitud_reunion_root" name="Reuniones"/>
+    <menuitem id="menu_solicitud_reunion" name="Solicitudes" parent="menu_solicitud_reunion_root" action="action_solicitud_reunion"/>
+</odoo>

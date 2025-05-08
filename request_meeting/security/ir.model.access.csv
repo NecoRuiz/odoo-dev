@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
+access_solicitud_reunion_user,access.solicitud.reunion.user,model_solicitud_reunion,,1,1,1,1

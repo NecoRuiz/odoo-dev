@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_reserva_servicio_tree" model="ir.ui.view">
+        <field name="name">reserva.servicio.tree</field>
+        <field name="model">reserva.servicio</field>
+        <field name="arch" type="xml">
+            <tree string="Reservas">
+                <field name="tipo_servicio"/>
+                <field name="fecha"/>
+                <field name="ubicacion"/>
+                <field name="precio"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_reserva_servicio_form" model="ir.ui.view">
+        <field name="name">reserva.servicio.form</field>
+        <field name="model">reserva.servicio</field>
+        <field name="arch" type="xml">
+            <form string="Reserva">
+                <sheet>
+                    <group>
+                        <field name="tipo_servicio"/>
+                        <field name="fecha"/>
+                        <field name="horas"/>
+                        <field name="ubicacion"/>
+                        <field name="precio"/>
+                        <field name="usuario_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_reserva_servicio" model="ir.actions.act_window">
+        <field name="name">Reservas</field>
+        <field name="res_model">reserva.servicio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_reserva_servicio_root" name="Reservas"/>
+    <menuitem id="menu_reserva_servicio" name="Reservas" parent="menu_reserva_servicio_root" action="action_reserva_servicio"/>
+</odoo>
+
